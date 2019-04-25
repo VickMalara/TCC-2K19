@@ -8,8 +8,8 @@
 
 <form action = "plogin.php" method = "POST">
 	<p>
-		<label for = "login"> Apelido ou e-mail: </label>
-		<input type = "text" name = "login" />
+		<label for = "login"> Apelido: </label>
+		<input type = "text" name = "apelido" />
 	</p>
 			
 	<p>

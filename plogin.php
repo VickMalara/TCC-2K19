@@ -2,13 +2,13 @@
 
 	session_start();
 
-	$login = $_POST["login"];
+	$apelido = $_POST["apelido"];
 	$senha = md5($_POST["senha"]);
 	$achou = false;
 	
 	include "conexao.php";
 	
-	$sql = "SELECT * FROM usuario WHERE email = '". $login ."'";
+	$sql = "SELECT * FROM usuario WHERE apelido = '". $apelido ."'";
 
 	$resultado = mysqli_query($conexao, $sql);
 	
