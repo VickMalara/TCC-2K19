@@ -3,7 +3,7 @@
 	$nome = $_POST['nome'];
 	$apelido = $_POST['apelido'];
 	$email = $_POST['email'];
-	$data_nasc = $_POST['data_nasc'];
+	$dataNasc = $_POST['data_nasc'];
 	$genero = $_POST['genero'];
 	$senha = md5($_POST['senha']);
 	
@@ -25,17 +25,13 @@
 	}
 	else{
  
-		$consulta = "INSERT INTO usuario(nome, apelido, email, senha, sexo) 
-					 VALUES ('$nome', '$apelido', '$email', '$senha', '$genero')";
-		echo $consulta;
+		$consulta = "INSERT INTO usuario(nome, apelido, email, senha, sexo, dataNasc) 
+					 VALUES ('$nome', '$apelido', '$email', '$senha', '$genero', '$dataNasc')";
 		if(mysqli_query($conexao, $consulta)){
-			
+			header("Location:login.php");
 		}else{
 			echo mysqli_error($conexao);
 		}
-		
-		header("Location:login.php");
-	
 	}
 	
 ?>

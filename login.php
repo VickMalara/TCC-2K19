@@ -21,5 +21,8 @@
 		<input type = "submit" value = "Entrar" />
 		<a href = "*">Recuperar senha</a>
 	</p>
+	<p>
+		<a href="cadastro.php">Criar conta</a>
+	</p>
 			
 </form>
