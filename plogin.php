@@ -12,15 +12,20 @@
 
 	$resultado = mysqli_query($conexao, $sql);
 	
-	while($linha = mysqli_fetch_assoc($resultado)){
+	$linha = mysqli_fetch_assoc($resultado);
+	
 		if($senha == $linha["senha"]){
 			$_SESSION["usuario"] = $linha["ident"]; 
 			$achou = true;
 		}
-	}
 	
 	if($achou){
-		echo '0';
+		if($linha['validada'] == 0){
+				echo '3';
+		}
+		else{
+			echo '0';
+		}
 	}else if(mysqli_num_rows($resultado) == 0){
 		echo '1';
 	}else{

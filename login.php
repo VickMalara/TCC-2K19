@@ -40,8 +40,10 @@
 				$("#msg").html('Login bem sucedido');
 			}else if(msg == '1'){
 				$("#msg").html('Usuário não encontrado');
-			}else{
+			}else if(msg == '2'){
 				$("#msg").html('Senha incorreta');
+			}else{
+				$("#msg").html('E-mail não validado.');
 			}
 			
 		});
