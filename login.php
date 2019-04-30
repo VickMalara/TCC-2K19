@@ -3,12 +3,12 @@
 	<p id="msg"></p>
 	<form action = "plogin.php" method = "POST">
 		<p>
-			<label for = "login"> Apelido: </label>
+			<label for = "login">Apelido</label>
 			<input type = "text" id = "apelido" />
 		</p>
 				
 		<p>
-			<label for = "senha"> Senha: </label>
+			<label for = "senha">Senha</label>
 			<input type = "password" id = "senha" />
 		</p>
 		
@@ -16,10 +16,10 @@
 			<button type="button" id="bt-plogin">Entrar</button>
 			<button type="button" id="bt-limpa-modal">Cancelar</button>
 		</p>
-		<p> Não lembra a senha?
+		<p class="sub-campo"> Não lembra a senha?
 			<button type="button">Recuperar senha</button>
 		</p>
-		<p>	Não tem conta?
+		<p class="sub-campo">	Não tem conta?
 			<button type="button">Criar nova conta</button>
 		</p>
 
@@ -50,6 +50,7 @@
 	});
 
 	$('#bt-limpa-modal').click(function(){
+		$("#modal-dinamico").css("width",'0%');
 		$("#modal-dinamico").html('');
 	});
 </script>

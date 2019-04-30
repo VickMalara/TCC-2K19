@@ -1,8 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
 *{
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
+	font-family: 'Merriweather', serif;
 }
 
 body{
+	position: absolute;
+	width:100%;
+	height:100%;
+	background: url("../_img/background.png");
+
+}
+
+body::-webkit-scrollbar{
+	width:0;
+}
+
+nav{
+	width:100%;
+	height: 15%;
+	display: flex;
+	justify-content: center;
+	background-color:rgba(0,0,0,0.8);
+}
+
+nav button{
+	border:none;
+	width:20%;
+	font-size:2em;
+	text-transform: uppercase;
+	margin: 0 .5%;
+	color:#76a5afff;
+	background: transparent;
+	outline: none;
+	transition: box-shadow 0.3s;
+}
+
+nav button:hover{
+	cursor: pointer;
+	box-shadow:inset 0px -7px #76a5afff;
+}
+
+#conteudo{
+	display: flex;
+	height:85%;
+}
+
+#bloco-conteudo{
+	width:100%;
+	display: inline-flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+#txt-central{
+	width:50%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding:0px 20px;
+	color:#ffab40ff;
+	text-align: center;
+	text-transform: uppercase;
+	background: rgba(0,0,0,0.7);
+	
+	border-top:3px solid #ffab40ff;
+	border-bottom: 3px solid #ffab40ff;
+}
+
+#modal-dinamico{
+	position: absolute;
+	z-index: 1;
+	top:0;
+	width:0%;
+	height:100%;
+	background: rgba(0,0,0,0.7);
+	transition: all 0.3s;
+}
+
+.form-div{
+	background: #76a5afff;
+	width:35%;
+	height: 100%;
+	box-shadow: 2px 0px 20px #76a5afff;
+	text-align: center;
+	padding:15px;
+}
+
+.form-div h1{
+	display: box;
+	width:100%;
+	margin:auto;
+	margin-bottom:30px;
+	border-top:3px solid rgba(51,51,51,0.8);
+	border-bottom:3px solid rgba(51,51,51,0.8);
+	color:#333;
+	font-size:3em;
+	text-transform: uppercase;
+}
+
+#msg{
+	border:none;
+}
+
+.form-div p{
+	width:100%;
+	margin:8px auto;
+	text-align: left;
+	text-transform: uppercase;
+	font-size:0.9em;
+}
+
+.form-div p input{
+	display: box;
+	width:100%;
+	height:30px;
+	border:none;
+	box-shadow: inset 0px 0px 4px rgba(0,0,0,0.7);
+
 }

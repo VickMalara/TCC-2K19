@@ -64,6 +64,7 @@
 		});
 	});
 	$('#bt-limpa-modal').click(function(){
+		$("#modal-dinamico").css("width","0%");
 		$("#modal-dinamico").html('');
 	});
 </script>

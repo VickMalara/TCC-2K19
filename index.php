@@ -4,11 +4,13 @@
 	<head>
 		<title>PINEAPPLE</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="_css/interface.css">
 		<script type="text/javascript" src="_js/jquery.min.js"></script>
 		<script type="text/javascript">
 
 			$(function(){
 				$('#bt-login').click(function(){
+					$("#modal-dinamico").css("width",'100%');
 					$.ajax({
 						url : 'login.php',
 						type : 'get'
@@ -18,6 +20,7 @@
 				});
 
 				$('#bt-cadastro').click(function(){
+					$("#modal-dinamico").css("width",'100%');
 					$.ajax({
 						url : 'cadastro.php',
 						type : 'get'
@@ -40,12 +43,14 @@
 		</nav>
 		<div id="conteudo">
 			<div id="bloco-conteudo">
-				<div class="txt-central">
-					<h1>Txt</h1>
+				<div id="txt-central">
+					<h1>Aqui você aprende a criar sites brincando! Para começar a usar, crie ou acesse sua conta.</h1>
 				</div>
+				
 			</div>
 			<div id="modal-dinamico">
 			</div>
 		</div>
+		
 	</body>
 </html>
