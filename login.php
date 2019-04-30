@@ -20,7 +20,7 @@
 			<button type="button">Recuperar senha</button>
 		</p>
 		<p class="sub-campo">	Não tem conta?
-			<button type="button">Criar nova conta</button>
+			<button type="button" id = "bt-nv-conta">Criar nova conta</button>
 		</p>
 
 	</form>
@@ -53,4 +53,18 @@
 		$("#modal-dinamico").css("width",'0%');
 		$("#modal-dinamico").html('');
 	});
+	
+	$("#bt-nv-conta").click(function(){
+		$("#modal-dinamico").css("width",'0%');
+		$("#modal-dinamico").html('');
+		setTimeout(function(){
+			$("#modal-dinamico").css("width",'100%');
+			$.ajax({
+				url : 'cadastro.php',
+				type : 'get'
+			}).done(function(msg){
+				$('#modal-dinamico').html(msg);
+			})
+		}, 400);
+	})
 </script>
