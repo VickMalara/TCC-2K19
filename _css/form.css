@@ -1,0 +1,14 @@
+div.form-div{
+	border:1px solid black;
+	margin:auto;
+	width:70%;
+}
+
+div.form-div h1{
+	display: block;
+	margin-top:2%;
+	padding:10px 5px;
+	text-align: center;
+	width:100%;
+	background-color: #666;
+}

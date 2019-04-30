@@ -20,9 +20,11 @@
 	}
 	
 	if($achou){
-		header("Location:index.php"); //direciona o usuário para a pargina inicial após o login ser bem sucedido.
+		echo '0';
+	}else if(mysqli_num_rows($resultado) == 0){
+		echo '1';
 	}else{
-		header("Location:login.php?falhou=1"); //retorna o usuário ao formulário de login, enviando por GET uma variavel falhou com valor 1.
+		echo '2';
 	}
 	
 ?>
