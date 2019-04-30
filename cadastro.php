@@ -14,16 +14,15 @@
 
 		<p><label>Data de Nascimento</label>
 			<input type="date" id="dataNasc" required /></p>
-	
-		<p>
-			<label>Gênero</label>
 
+		<p>Gênero</p>
+		<p class="radio">
 			<input id="feminino" type="radio" name="genero" value="feminino" checked>			
-			<label>Feminino</label>
+			<label for="feminino">Feminino</label>
 			<input id="masculino" type="radio" name="genero" value="masculino">
-			<label>Masculino</label>
-			<input id="não binário" type="radio" name="genero" value="não binário">
-			<label>Não Binário</label>
+			<label for="masculino">Masculino</label>
+			<input id="nao-binario" type="radio" name="genero" value="não binário">
+			<label for="nao-binario">Não Binário</label>
 		</p>
 		
 		<p><label>Senha</label>

@@ -6,36 +6,12 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="_css/interface.css">
 		<script type="text/javascript" src="_js/jquery.min.js"></script>
-		<script type="text/javascript">
-
-			$(function(){
-				$('#bt-login').click(function(){
-					$("#modal-dinamico").css("width",'100%');
-					$.ajax({
-						url : 'login.php',
-						type : 'get'
-					}).done(function(msg){
-						$('#modal-dinamico').html(msg);
-					})
-				});
-
-				$('#bt-cadastro').click(function(){
-					$("#modal-dinamico").css("width",'100%');
-					$.ajax({
-						url : 'cadastro.php',
-						type : 'get'
-					}).done(function(msg){
-						$('#modal-dinamico').html(msg);
-					})
-				});
-			});
-		</script>
 	</head>
 	<body>
 		<nav>
 			<?php if(isset($_SESSION["usuario"])){
-					echo'<a href="editar-perfil.php">Editar Perfil</a>
-					<a href="logout.php">Logout</a>';
+					echo'<button id="bt-editar-perfil">Editar Perfil</button>
+					<button id="bt-logout">Logout</button>';
 			}else{
 				echo'<button id="bt-login" type="button">Entrar</button>
 					<button id="bt-cadastro" type="button">Criar conta</button>';
@@ -51,6 +27,48 @@
 			<div id="modal-dinamico">
 			</div>
 		</div>
-		
+		<script type="text/javascript">
+
+			$(function(){
+				$('#bt-login').on("click",function(){
+					$("#modal-dinamico").css("width",'100%');
+					$.ajax({
+						url : 'login.php',
+						type : 'get'
+					}).done(function(msg){
+						$('#modal-dinamico').html(msg);
+					})
+				});
+
+				$('#bt-cadastro').on("click",function(){
+					$("#modal-dinamico").css("width",'100%');
+					$.ajax({
+						url : 'cadastro.php',
+						type : 'get'
+					}).done(function(msg){
+						$('#modal-dinamico').html(msg);
+					})
+				});
+
+				$('#bt-editar-perfil').on("click",function(){
+					$("#modal-dinamico").css("width",'100%');
+					$.ajax({
+						url : 'editar-perfil.php',
+						type : 'get'
+					}).done(function(msg){
+						$('#modal-dinamico').html(msg);
+					})
+				});
+
+				$('#bt-logout').on("click",function(){
+					$.ajax({
+						url : 'logout.php',
+						type : 'get'
+					}).done(function(msg){
+						 window.location.reload();
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

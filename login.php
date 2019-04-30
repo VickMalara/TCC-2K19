@@ -38,12 +38,22 @@
 		}).done(function(msg){
 			if(msg == '0'){
 				$("#msg").html('Login bem sucedido');
+				$("#modal-dinamico").css("width",'0%');
+				$("#modal-dinamico").html('');
+				setTimeout(function(){
+					window.location.reload();
+				},500);
 			}else if(msg == '1'){
 				$("#msg").html('Usuário não encontrado');
 			}else if(msg == '2'){
 				$("#msg").html('Senha incorreta');
 			}else{
 				$("#msg").html('E-mail não validado.');
+				$("#modal-dinamico").css("width",'0%');
+				$("#modal-dinamico").html('');
+				setTimeout(function(){
+					window.location.reload();
+				},500);
 			}
 			
 		});

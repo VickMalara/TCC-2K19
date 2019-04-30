@@ -41,7 +41,7 @@ nav button{
 
 nav button:hover{
 	cursor: pointer;
-	box-shadow:inset 0px -7px #76a5afff;
+	box-shadow:inset 0px -5px #76a5afff;
 }
 
 #conteudo{
@@ -121,6 +121,60 @@ nav button:hover{
 	width:100%;
 	height:30px;
 	border:none;
+	padding:5px;
 	box-shadow: inset 0px 0px 4px rgba(0,0,0,0.7);
+}
 
+.form-div p.sub-campo{
+	text-transform: unset;
+}
+
+.form-div p.sub-campo button{
+	border:none;
+	color:#ffab40ff;
+	background: transparent;
+	font-weight: bold;
+}
+
+.form-div p.sub-campo button:hover{
+	cursor:pointer;
+}
+
+.form-div p.radio{
+	display:flex;
+	justify-content: center;
+	margin-top:0px;
+}
+
+.form-div p.radio input{
+	display: none;
+}
+
+.form-div p.radio label{
+	display:block;
+	width:100%;
+	padding:5px;
+	margin:0px 3px;
+	text-align:center;
+	background-color:white;
+	transition: all 0.3s;
+	box-shadow: 1px 1px #e0b22c;
+}
+
+.form-div p.radio label:hover{
+	cursor: pointer;
+}
+#masculino:checked ~ label[for="masculino"]{
+	background-color:#edc140;
+	color:white;
+}
+
+#feminino:checked ~ label[for="feminino"]{
+	background-color:#edc140;
+	color:white;
+}
+
+#nao-binario:checked ~ label[for="nao-binario"]{
+	background-color:#edc140;
+	color:white;
 }
