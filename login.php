@@ -12,7 +12,7 @@
 			<input type = "password" id = "senha" />
 		</p>
 		
-		<p>
+		<p class="botoes">
 			<button type="button" id="bt-plogin">Entrar</button>
 			<button type="button" id="bt-limpa-modal">Cancelar</button>
 		</p>
@@ -44,9 +44,27 @@
 					window.location.reload();
 				},500);
 			}else if(msg == '1'){
-				$("#msg").html('Usuário não encontrado');
+				$("#msg").css("display","block");
+				$("#msg").css("width","100%");
+				$("#msg").css("height","30px");
+				$("#msg").css("border","1px solid #900");
+				$("#msg").css("color","#900");
+				$("#msg").css("border-radius","5px");
+				$("#msg").css("opacity","1");
+				setTimeout(function(){
+					$("#msg").html('Usuário não existe');
+				},200);
 			}else if(msg == '2'){
-				$("#msg").html('Senha incorreta');
+				$("#msg").css("display","block");
+				$("#msg").css("width","100%");
+				$("#msg").css("height","30px");
+				$("#msg").css("border","1px solid #900");
+				$("#msg").css("color","#900");
+				$("#msg").css("border-radius","5px");
+				$("#msg").css("opacity","1");
+				setTimeout(function(){
+					$("#msg").html('Senha incorreta');
+				},200);
 			}else{
 				$("#msg").html('E-mail não validado.');
 				$("#modal-dinamico").css("width",'0%');

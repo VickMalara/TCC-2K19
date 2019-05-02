@@ -12,36 +12,14 @@ body{
 	width:100%;
 	height:100%;
 	background: url("../_img/background.png");
-
 }
 
 body::-webkit-scrollbar{
 	width:0;
 }
 
-nav{
-	width:100%;
-	height: 15%;
-	display: flex;
-	justify-content: center;
-	background-color:rgba(0,0,0,0.8);
-}
-
-nav button{
-	border:none;
-	width:20%;
-	font-size:2em;
-	text-transform: uppercase;
-	margin: 0 .5%;
-	color:#76a5afff;
-	background: transparent;
-	outline: none;
-	transition: box-shadow 0.3s;
-}
-
-nav button:hover{
+button:hover{
 	cursor: pointer;
-	box-shadow:inset 0px -5px #76a5afff;
 }
 
 #conteudo{
@@ -84,10 +62,10 @@ nav button:hover{
 }
 
 .form-div{
-	background: #76a5afff;
+	background: #45e8ac;
 	width:35%;
 	height: 100%;
-	box-shadow: 2px 0px 20px #76a5afff;
+	box-shadow: 2px 0px 20px #45e8ac;
 	text-align: center;
 	padding:15px;
 }
@@ -104,15 +82,20 @@ nav button:hover{
 	text-transform: uppercase;
 }
 
-#msg{
-	border:none;
+#msg,#msg-dados{
+	display: none;
+	width:100%;
+	height:0;
+	padding:5px;
+	opacity: 0;
+	transition: all 0.2s;
 }
 
 .form-div p{
 	width:100%;
 	margin:8px auto;
 	text-align: left;
-	text-transform: uppercase;
+	color:#fff;
 	font-size:0.9em;
 }
 
@@ -120,9 +103,18 @@ nav button:hover{
 	display: box;
 	width:100%;
 	height:30px;
-	border:none;
+	border:1px solid #fff;
+	background:transparent;
+	color:white;
+	outline: none;
 	padding:5px;
-	box-shadow: inset 0px 0px 4px rgba(0,0,0,0.7);
+	box-shadow: inset 0px 0px 4px rgba(255,255,255,0.8);
+	transition:all 0.4s;
+}
+
+.form-div p input:focus{
+	background: rgba(255,255,255,0.3);
+	color:#999;
 }
 
 .form-div p.sub-campo{
@@ -131,7 +123,7 @@ nav button:hover{
 
 .form-div p.sub-campo button{
 	border:none;
-	color:#ffab40ff;
+	color:#0b5b3e;
 	background: transparent;
 	font-weight: bold;
 }
@@ -143,7 +135,7 @@ nav button:hover{
 .form-div p.radio{
 	display:flex;
 	justify-content: center;
-	margin-top:0px;
+	background:#0e714d;
 }
 
 .form-div p.radio input{
@@ -152,29 +144,52 @@ nav button:hover{
 
 .form-div p.radio label{
 	display:block;
+	color:#19cc8b;
 	width:100%;
 	padding:5px;
-	margin:0px 3px;
 	text-align:center;
 	background-color:white;
 	transition: all 0.3s;
-	box-shadow: 1px 1px #e0b22c;
 }
 
 .form-div p.radio label:hover{
 	cursor: pointer;
 }
-#masculino:checked ~ label[for="masculino"]{
-	background-color:#edc140;
+
+#masculino:checked ~ label[for="masculino"], #nao-binario:checked ~ label[for="nao-binario"], #feminino:checked ~ label[for="feminino"]{
+	background-color:transparent;
 	color:white;
 }
 
-#feminino:checked ~ label[for="feminino"]{
-	background-color:#edc140;
-	color:white;
+.form-div p.botoes{
+	margin-top:3%;
+	display: flex;
+	justify-content: center;
+	height:40px;
 }
 
-#nao-binario:checked ~ label[for="nao-binario"]{
-	background-color:#edc140;
-	color:white;
+.form-div p.botoes button{
+	width:100%;
+	padding:5px;
+	border:none;
+	font-size:1em;
+	color:#19cc8b;
+	text-transform: uppercase;
+	/*box-shadow: inset 0px 0px 4px rgba(0,0,0,0.7);*/
+	background: rgba(255,255,255,1);
+	transition: box-shadow 0.4s;
+}
+
+.form-div p.botoes button[id="bt-limpa-modal"]{
+	margin-left: 5px;
+	color:#990000;
+	width:45%;
+}
+
+.form-div p.botoes button:hover{
+	box-shadow:inset 0px 0px 4px #0b5b3e;
+}
+
+.form-div p.botoes button[id="bt-limpa-modal"]:hover{
+	box-shadow:inset 0px 0px 4px #900;
 }

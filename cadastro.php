@@ -1,6 +1,6 @@
 <script type="text/javascript" src="_js/jquery.min.js"></script>
 <div class="form-div">
-	<h1>Crie sua conta grátis!</h1>
+	<h1>Crie sua conta!</h1>
 	<p id="msg"></p>
 	<form name="cadastro" action="pcadastro.php" method="post">
 		<p><label>Nome</label>
@@ -30,8 +30,10 @@
 		<p><label>Confirmar senha</label>
 			<input type="password" id="conf-senha" required /></p>
 		
-		<button type="button" id="bt-pcadastro">Criar sua Conta!</button>
-		<button type="button" id="bt-limpa-modal">Cancelar</button>
+		<p class="botoes">
+			<button type="button" id="bt-pcadastro">Criar sua Conta!</button>
+			<button type="button" id="bt-limpa-modal">Cancelar</button>
+		</p>
 	</form>
 </div>
 
@@ -50,16 +52,64 @@
 				"confSenha" : $("#conf-senha").val()
 			}
 		}).done(function(msg){
-			$("#msg").html(msg);
-			// if(msg == 0){
-			// 	$("#msg").html('Cadastro bem sucedido!');
-			// }else if(msg == 1){
-			// 	$("#msg").html('E-mail ou apelido já cadastrado.');
-			// }else if(msg == 2){
-			// 	$("#msg").html('Algo deu errado :( Tente novamente mais tarde.');
-			// }else{
-			// 	$("#msg").html('As senhas não estão iguais.');
-			// }
+			if(msg == 0){
+				$("#msg").css("display","block");
+				$("#msg").css("width","100%");
+				$("#msg").css("height","30px");
+				$("#msg").css("border","1px solid #0b5b3e");
+				$("#msg").css("color","#0b5b3e");
+				$("#msg").css("border-radius","5px");
+				$("#msg").css("opacity","1");
+				setTimeout(function(){
+					$("#msg").html('Usuário cadastrado com sucesso');
+				},200);
+				setTimeout(function(){
+					$("#modal-dinamico").css("width","0%");
+					$("#modal-dinamico").html('');
+					setTimeout(function(){
+						$("#modal-dinamico").css("width",'100%');
+						$.ajax({
+							url : 'login.php',
+							type : 'get'
+						}).done(function(msg){
+							$('#modal-dinamico').html(msg);
+						});
+					},500);
+				},800);
+			}else if(msg == 1){
+				$("#msg").css("display","block");
+				$("#msg").css("width","100%");
+				$("#msg").css("height","30px");
+				$("#msg").css("border","1px solid #900");
+				$("#msg").css("color","#900");
+				$("#msg").css("border-radius","5px");
+				$("#msg").css("opacity","1");
+				setTimeout(function(){
+					$("#msg").html('Esse e-mail ou apelido já está em uso.');
+				},200);
+			}else if(msg == 2){
+				$("#msg").css("display","block");
+				$("#msg").css("width","100%");
+				$("#msg").css("height","30px");
+				$("#msg").css("border","1px solid #900");
+				$("#msg").css("color","#900");
+				$("#msg").css("border-radius","5px");
+				$("#msg").css("opacity","1");
+				setTimeout(function(){
+					$("#msg").html('Algo deu errado, tente novamente mais tarde.');
+				},200);
+			}else{
+				$("#msg").css("display","block");
+				$("#msg").css("width","100%");
+				$("#msg").css("height","30px");
+				$("#msg").css("border","1px solid #900");
+				$("#msg").css("color","#900");
+				$("#msg").css("border-radius","5px");
+				$("#msg").css("opacity","1");
+				setTimeout(function(){
+					$("#msg").html('As senhas não estão iguais.');
+				},200);
+			}
 		});
 	});
 	$('#bt-limpa-modal').click(function(){

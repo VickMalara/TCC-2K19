@@ -5,13 +5,18 @@
 		<title>PINEAPPLE</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="_css/interface.css">
+		<link rel="stylesheet" id="nav" type="text/css" href="_css/nav-offline.css">
 		<script type="text/javascript" src="_js/jquery.min.js"></script>
 	</head>
 	<body>
 		<nav>
 			<?php if(isset($_SESSION["usuario"])){
-					echo'<button id="bt-editar-perfil">Editar Perfil</button>
-					<button id="bt-logout">Logout</button>';
+					echo'
+					<button id="bt-logout">Sair</button>
+					<button id="bt-editar-perfil">'.$_SESSION["apelido"].'</button>';
+					echo"<script>
+						$('#nav').attr('href','_css/nav-online.css');
+					</script>";
 			}else{
 				echo'<button id="bt-login" type="button">Entrar</button>
 					<button id="bt-cadastro" type="button">Criar conta</button>';
@@ -19,6 +24,7 @@
 		</nav>
 		<div id="conteudo">
 			<div id="bloco-conteudo">
+				<div class="alert"></div>
 				<div id="txt-central">
 					<h1>Aqui você aprende a criar sites brincando! Para começar a usar, crie ou acesse sua conta.</h1>
 				</div>
