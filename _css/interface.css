@@ -18,6 +18,10 @@ body::-webkit-scrollbar{
 	width:0;
 }
 
+button{
+	outline: none;
+}
+
 button:hover{
 	cursor: pointer;
 }
@@ -192,4 +196,47 @@ button:hover{
 
 .form-div p.botoes button[id="bt-limpa-modal"]:hover{
 	box-shadow:inset 0px 0px 4px #900;
+}
+
+#validacao{
+	width:100%;
+	position: absolute;
+	top:15%;
+	background: rgba(200,0,0,0.8);
+	padding:5px;
+	text-align: center;
+	color:black;
+	display:flex;
+	transition: background 0.3s;	
+}
+
+#validacao a{
+	text-decoration: none;
+	color:#fff;
+	font-weight: bold;
+}
+
+#validacao a:hover{
+	text-decoration: underline;
+}
+
+#validacao button{
+	height: 100%;
+	width:auto;
+	background: transparent;
+	border:none;
+	text-align:center;
+	font-weight: bold;
+	color:white;
+	transition: text-shadow 0.3s;
+}
+
+#validacao p{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+#validacao button:hover{
+	text-shadow:0px 0px 3px rgba(255,255,255,0.5);
 }

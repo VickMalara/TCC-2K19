@@ -36,6 +36,14 @@
 				'senha' : $("#senha").val()
 			}
 		}).done(function(msg){
+			// $("#msg").css("display","block");
+			// $("#msg").css("width","100%");
+			// $("#msg").css("height","30px");
+			// $("#msg").css("border","1px solid #900");
+			// $("#msg").css("color","#900");
+			// $("#msg").css("border-radius","5px");
+			// $("#msg").css("opacity","1");
+			// $("#msg").html(msg);
 			if(msg == '0'){
 				$("#msg").html('Login bem sucedido');
 				$("#modal-dinamico").css("width",'0%');
@@ -73,7 +81,6 @@
 					window.location.reload();
 				},500);
 			}
-			
 		});
 	});
 

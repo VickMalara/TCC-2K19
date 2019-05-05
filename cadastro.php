@@ -1,4 +1,3 @@
-<script type="text/javascript" src="_js/jquery.min.js"></script>
 <div class="form-div">
 	<h1>Crie sua conta!</h1>
 	<p id="msg"></p>
@@ -39,6 +38,7 @@
 
 <script type="text/javascript">
 	$("#bt-pcadastro").click(function(){
+
 		$.ajax({
 			url : "pcadastro.php",
 			type : "post",

@@ -9,22 +9,17 @@
 		<script type="text/javascript" src="_js/jquery.min.js"></script>
 	</head>
 	<body>
-		<nav>
-			<?php if(isset($_SESSION["usuario"])){
-					echo'
-					<button id="bt-logout">Sair</button>
-					<button id="bt-editar-perfil">'.$_SESSION["apelido"].'</button>';
-					echo"<script>
-						$('#nav').attr('href','_css/nav-online.css');
-					</script>";
-			}else{
-				echo'<button id="bt-login" type="button">Entrar</button>
-					<button id="bt-cadastro" type="button">Criar conta</button>';
-			} ?>
-		</nav>
+		<?php include "nav.php"; ?>
 		<div id="conteudo">
 			<div id="bloco-conteudo">
-				<div class="alert"></div>
+				<?php
+					if(isset($_SESSION["validacao"]) && $_SESSION["validacao"] == 0){
+						echo'<div id="validacao">
+							<button class="bt-close">&times;</button>
+							<p>Seu e-mail ainda precisa ser validado. <button id="bt-send-email">Clique aqui</button> e será enviado ao seu e-mail um link de verificação. Acesse esse link e seu e-mail será validado.</p>
+						</div>';
+					}
+				?>
 				<div id="txt-central">
 					<h1>Aqui você aprende a criar sites brincando! Para começar a usar, crie ou acesse sua conta.</h1>
 				</div>
@@ -56,22 +51,24 @@
 					})
 				});
 
-				$('#bt-editar-perfil').on("click",function(){
-					$("#modal-dinamico").css("width",'100%');
-					$.ajax({
-						url : 'editar-perfil.php',
-						type : 'get'
-					}).done(function(msg){
-						$('#modal-dinamico').html(msg);
-					})
+				$('.bt-close').click(function(){
+					$(this).parent().fadeOut();
 				});
 
-				$('#bt-logout').on("click",function(){
+				$('#bt-send-email').click(function(){
 					$.ajax({
-						url : 'logout.php',
-						type : 'get'
+						url : "sendemail.php",
+						type : "get",
+						beforeSend : function(){
+							$("#validacao").css('background','rgba(237, 198, 83,0.5)');
+							$("#validacao p").html('Enviando E-mail...');
+						}
 					}).done(function(msg){
-						 window.location.reload();
+						$("#validacao").css('background','rgba(22, 182, 123,0.5)');
+						$("#validacao p").html('E-mail enviado com sucesso!');
+						setTimeout(function(){
+							$("#validacao").fadeOut();
+						},500);
 					});
 				});
 			});

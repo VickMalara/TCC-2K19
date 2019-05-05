@@ -17,6 +17,7 @@
 		if($senha == $linha["senha"]){
 			$_SESSION["usuario"] = $linha["ident"]; 
 			$_SESSION["apelido"] = $linha["apelido"];
+			$_SESSION["validacao"] = $linha["validada"];
 			$achou = true;
 		}
 	
