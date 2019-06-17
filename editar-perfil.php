@@ -32,7 +32,7 @@
 				if(msg == 0){
 					$("#msg-senha").html('Salvo!');
 				}else if(msg == 1){
-					$("#msg-senha").html('n ta igual');
+					$("#msg-senha").html('As senhas estão diferentes');
 				}else{
 					$("#msg-senha").html('Erro na senha!');
 				}
@@ -55,6 +55,7 @@
 				}
 			}).done(function(msg){
 				if(msg == 0){
+					$("#bt-perfil").html($("#apelido").val());
 					$("#msg-dados").css("display","block");
 					$("#msg-dados").css("width","100%");
 					$("#msg-dados").css("height","30px");
@@ -88,7 +89,7 @@
 		<p id="msg-dados"></p>
 		<p>
 			<label for="apelido">Apelido</label>
-			<input type="text" name="apelido" id="apelido" <?php echo 'value="'.$apelido.'"'?> >
+			<input type="text" name="apelido" id="apelido" <?php echo 'value="'.$apelido.'"'?> maxlength="10">
 		</p>
 		<p>
 			<label for="nome">Nome</label>
@@ -119,6 +120,18 @@
 	</form>
 </div>
 <script type="text/javascript">
+	$("#versenha").keyup(function(){
+		var senha1 = $("#versenha").val();
+		var senha2 = $("#nvsenha").val();
+		if(senha1 == senha2){
+			$("#versenha").css("box-shadow","0px 0px 8px #090");
+			$("#nvsenha").css("box-shadow","0px 0px 8px #090");
+		}else{
+			$("#versenha").css("box-shadow","0px 0px 8px #900");
+			$("#nvsenha").css("box-shadow","0px 0px 8px #900");
+		}
+	});
+
 	$('#bt-limpa-modal').click(function(){
 		$("#modal-dinamico").css("width",'0%');
 		$("#modal-dinamico").html('');

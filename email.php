@@ -9,7 +9,7 @@ $mail = new PHPMailer;
 $mail->IsSMTP();
 $mail->Host = "smtp.gmail.com";
 $mail->SMTPAuth = true;
-$mail->Username = 'email@email.com';
-$mail->Password = 'senha';
+$mail->Username = 'learningpineapple@gmail.com';
+$mail->Password = 'colisordeparticulas';
 
 ?>

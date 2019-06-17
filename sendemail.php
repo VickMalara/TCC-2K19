@@ -13,20 +13,24 @@
 
 	$sql = "SELECT email FROM usuario WHERE ident = ". $_SESSION["usuario"];
 	$result = mysqli_fetch_assoc(mysqli_query($conexao,$sql));
-
 	$body = "<html>
 				<body>
 					<h1>VALIDE SEU E-MAIL E CONCLUA SUA CONTA NO PINEAPPLE</h1>
 					<h2>Este é um E-mail automático que enviamos aos nossos novos usuários do PINEAPPLE para confirmarmos se o e-mail usado no cadastro realmente o pertence.</h2>
 					<h3>Para validar seu e-mail, clique no link de confirmação.</h3>
 					<h3>Se não tiver criado uma conta em nosso site, ignore e exclua esse e-mail.</h3>
-					<p>Link de confirmação:<a href=\"$link\">$link</a></p>
+					<p>Link de confirmação:<a href=\"$link\">Validar E-mail</a></p>
 				</body>
 			</html>";	
 
-	$mail->setFrom('deh.pbrasil@gmail.com', 'Gabriel');
+	$mail->setFrom('learningpineapple@gmail.com', 'Pineapple Learning');
 	$mail->addAddress($result["email"], $_SESSION["apelido"]);
-	$mail->Subject  = 'PINEAPPLE | Confirme seu E-mail';
+	$mail->Subject  = 'Confirme seu E-mail';
 	$mail->msgHTML($body);
-	$mail->send();
+	
+	if(!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+        echo "Message sent!";
+    }
 ?>

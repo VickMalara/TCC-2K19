@@ -2,8 +2,9 @@
 	<?php if(isset($_SESSION["usuario"])){
 			echo'
 			<ul>
+				<li><button id="bt-inicio">Início</button></li>
 				<li><button>Aprender</button></li>
-				<li><button>Criar</button></li>
+				<li><button id="bt-criar">Criar</button></li>
 				<li><button>Galeria</button></li>
 				<li><button id="bt-perfil">'.$_SESSION["apelido"].'</button>
 					<ul id="editor-perfil" class="sub-item">
@@ -21,10 +22,32 @@
 	} ?>
 </nav>
 <script type="text/javascript">
+	$("#bt-inicio").click(function(){
+		$.ajax({
+			url : "inicio.php",
+			type : "get"
+		}).done(function(msg){
+			$("#bloco-conteudo").html(msg);
+		});
+		clearInterval(interval);
+	})
+	$('#bt-criar').click(function(){
+		$("#bloco-conteudo").fadeOut();
+		setTimeout(function(){
+			$.ajax({
+				url : "amb-projeto.php",
+				type : "get"
+			}).done(function(msg){
+				$("#bloco-conteudo").html(msg);
+				$("#bloco-conteudo").fadeIn();
+			});
+		}, 500);
+		clearInterval(interval);
+	});
+
 	$('#bt-perfil').click(function(){
 		$('#editor-perfil').css("display","block");
 		$('#editor-perfil').css("opacity","1");
-
 	});
 
 	$('#editor-perfil').mouseleave(function(){
@@ -46,6 +69,7 @@
 	});
 
 	$('#bt-logout').on("click",function(){
+		clearInterval(interval);
 		$.ajax({
 			url : 'logout.php',
 			type : 'get'

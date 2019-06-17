@@ -112,6 +112,19 @@
 			}
 		});
 	});
+
+	$("#conf-senha").keyup(function(){
+		var senha1 = $("#conf-senha").val();
+		var senha2 = $("#senha").val();
+		if(senha1 == senha2){
+			$("#conf-senha").css("box-shadow","0px 0px 8px #090");
+			$("#senha").css("box-shadow","0px 0px 8px #090");
+		}else{
+			$("#conf-senha").css("box-shadow","0px 0px 8px #900");
+			$("#senha").css("box-shadow","0px 0px 8px #900");
+		}
+	
+	});
 	$('#bt-limpa-modal').click(function(){
 		$("#modal-dinamico").css("width","0%");
 		$("#modal-dinamico").html('');

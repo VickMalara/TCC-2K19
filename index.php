@@ -6,6 +6,8 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="_css/interface.css">
 		<link rel="stylesheet" id="nav" type="text/css" href="_css/nav-offline.css">
+		<link rel="stylesheet" id="nav" type="text/css" href="_css/projeto.css">
+		<link rel="stylesheet" id="nav" type="text/css" href="_css/card.css">
 		<script type="text/javascript" src="_js/jquery.min.js"></script>
 	</head>
 	<body>
@@ -21,7 +23,7 @@
 					}
 				?>
 				<div id="txt-central">
-					<h1>Aqui você aprende a criar sites brincando! Para começar a usar, crie ou acesse sua conta.</h1>
+					<h1>,Aqui você aprende a criar sites brincando! Para começar a usar, crie ou acesse sua conta.</h1>
 				</div>
 				
 			</div>
@@ -29,6 +31,7 @@
 			</div>
 		</div>
 		<script type="text/javascript">
+			var interval;
 
 			$(function(){
 				$('#bt-login').on("click",function(){
@@ -38,7 +41,7 @@
 						type : 'get'
 					}).done(function(msg){
 						$('#modal-dinamico').html(msg);
-					})
+					});
 				});
 
 				$('#bt-cadastro').on("click",function(){
@@ -49,10 +52,6 @@
 					}).done(function(msg){
 						$('#modal-dinamico').html(msg);
 					})
-				});
-
-				$('.bt-close').click(function(){
-					$(this).parent().fadeOut();
 				});
 
 				$('#bt-send-email').click(function(){

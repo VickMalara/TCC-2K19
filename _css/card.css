@@ -1,0 +1,44 @@
+#projeto #card-mode{
+	height: 100%;
+	padding: 5px 5px 0px 5px;
+	overflow-y: scroll;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#projeto #card-mode::-webkit-scrollbar{
+	width:0;
+}
+
+#projeto #card-mode div.card{
+	width:29%;
+	min-height: 300px;
+	max-height: 350px;
+	margin:5px 5px;
+	border-radius: 10px;
+	position: relative;
+	background: white;
+	transition: transform 0.3s;
+}
+
+#projeto #card-mode div.card-top{
+	height: 55%;
+	background-color:#009933;
+	border-radius: 10px 10px 0px 0px;
+}
+#projeto #card-mode div.card p,#projeto #card-mode div.card h1{
+	padding: 0;
+	margin: 0;
+}
+
+#projeto #card-mode div.card-bottom{
+	height:45%;
+	border-radius: 0px 0px 10px 10px;
+	padding:5px 10px 10px 10px;
+}
+
+div.card:hover{
+	cursor: pointer;
+	transform: scale(1.05);
+}

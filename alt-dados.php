@@ -4,6 +4,8 @@
 	$apelido = $_POST["apelido"];
 	$nome = $_POST["nome"];
 	$perm = true;
+
+	$_SESSION["apelido"] = $apelido;
 	
 	$sql = "SELECT * FROM usuario WHERE apelido ='".$apelido."' AND ident != ".$_SESSION["usuario"];
 	$result = mysqli_query($conexao,$sql);

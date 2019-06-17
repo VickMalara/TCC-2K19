@@ -11,7 +11,9 @@ body{
 	position: absolute;
 	width:100%;
 	height:100%;
-	background: url("../_img/background.png");
+	background-image: url("../_img/background.jpg");
+	background-repeat: repeat;
+	background-size: 15%;
 }
 
 body::-webkit-scrollbar{
@@ -29,6 +31,7 @@ button:hover{
 #conteudo{
 	display: flex;
 	height:85%;
+	transition: all 0.4s;
 }
 
 #bloco-conteudo{
@@ -51,8 +54,8 @@ button:hover{
 	text-transform: uppercase;
 	background: rgba(0,0,0,0.7);
 	
-	border-top:3px solid #ffab40ff;
-	border-bottom: 3px solid #ffab40ff;
+	border-top:3px solid #ffab40;
+	border-bottom: 3px solid #ffab40;
 }
 
 #modal-dinamico{
@@ -61,7 +64,7 @@ button:hover{
 	top:0;
 	width:0%;
 	height:100%;
-	background: rgba(0,0,0,0.7);
+	background: #000d;
 	transition: all 0.3s;
 }
 
@@ -196,6 +199,10 @@ button:hover{
 
 .form-div p.botoes button[id="bt-limpa-modal"]:hover{
 	box-shadow:inset 0px 0px 4px #900;
+}
+
+.form-div p.botoes button:disabled{
+	background: rgb(100,100,100);
 }
 
 #validacao{

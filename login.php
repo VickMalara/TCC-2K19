@@ -17,7 +17,7 @@
 			<button type="button" id="bt-limpa-modal">Cancelar</button>
 		</p>
 		<p class="sub-campo"> Não lembra a senha?
-			<button type="button">Recuperar senha</button>
+			<button type="button" id="bt-rec-senha">Recuperar senha</button>
 		</p>
 		<p class="sub-campo">	Não tem conta?
 			<button type="button" id = "bt-nv-conta">Criar nova conta</button>
@@ -96,6 +96,20 @@
 			$("#modal-dinamico").css("width",'100%');
 			$.ajax({
 				url : 'cadastro.php',
+				type : 'get'
+			}).done(function(msg){
+				$('#modal-dinamico').html(msg);
+			})
+		}, 400);
+	});
+
+	$("#bt-rec-senha").click(function(){
+		$("#modal-dinamico").css("width",'0%');
+		$("#modal-dinamico").html('');
+		setTimeout(function(){
+			$("#modal-dinamico").css("width",'100%');
+			$.ajax({
+				url : 'recupera.php',
 				type : 'get'
 			}).done(function(msg){
 				$('#modal-dinamico').html(msg);
