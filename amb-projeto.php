@@ -1,7 +1,3 @@
-<link rel="stylesheet" id="nav" type="text/css" href="_css/projeto.css">
-<link rel="stylesheet" href="_css/colorPick.min.css">
-<script src="_js/dytemp.js"></script>
-
 <div id="amb-proj">
 	<div id="aba-criacao">
 		<div>
@@ -18,10 +14,7 @@
 		</div>
 	</div>
 </div>
-
-<script type="text/javascript" src="_js/dytemp.js"></script>
 <script type="text/javascript">
-
 	var cabecalho = 0;
 	var rodape = 0;
 	var menu = 0;

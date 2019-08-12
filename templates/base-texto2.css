@@ -1,0 +1,24 @@
+div.div-proj{
+	display:flex;
+	flex-direction: column;
+	padding:5px;
+	width:100%;
+	height:100%;
+}
+
+div.div-proj h1{
+	text-align: center;
+	font-weight: 700;
+	font-size: 48px;
+	width:100%;
+}
+
+div.div-proj .text{
+	display: block;
+	font-weight:300;
+	font-size: 32px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

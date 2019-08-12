@@ -1,0 +1,60 @@
+			<div id="atr-footer" class="dy-block" style="display:none;">
+				<h1>Personalizar rodapé</h1>
+				<div class="form-div p-3" style="background: white;">
+					<div class="d-flex w-100">
+						<div class="w-50">
+							<label class="m-0">Cor da letra:</label>
+							<div id="cor-footer" class="picker m-0"></div>
+						</div>
+						<div class="w-50">
+							<label class="m-0">Cor de fundo:</label>
+							<div id="bg-footer" class="picker m-0"></div>
+						</div>
+					</div>
+					<div class="d-flex">
+						<div class="w-100">
+							<label>nome do autor:</label>
+							<input type="text" id="rdp-autor-txt" class="w-100">
+						</div>
+						<div class="w-100">
+							<label>ano de criação:</label>
+							<input type="number" min="2019" id="rdp-ano-txt" class="w-100">
+						</div>
+					</div>
+					<div class="w-100 d-flex w-25">
+						<label style="width:50%;">Posição do texto:</label>
+						<select id="pos-rdp-txt" onchange="txtPos($(this).val(),'footer');">
+							<option value="left">Alinhado à esquerda</option>
+							<option value="center">Centralizado</option>
+							<option value="right">Alinhado à direita</option>
+						</select>
+					</div>
+					<div class="w-100 d-flex justify-content-between">
+						<div class="w-50">
+							<label class="w-100">Tamanho da letra:</label>
+							<select id="tam-rdp-txt" class="w-100" onchange="fontSize($(this).val(),'footer span');">
+								<option value="32px">Minúscula</option>
+								<option value="42px">Pequena</option>
+								<option value="48px">Média</option>
+								<option value="56px">Grande</option>
+								<option value="64px">Enorme</option>
+							</select>
+						</div>
+						<div class="">
+							<label class="w-100">Espaço interno:</label>
+							<select id="pd-rdp-txt" class="w-100" onchange="paddingSet($(this).val(),'footer');">
+								<option value="5px">Pequena</option>
+								<option value="10px">Média</option>
+								<option value="15px">Grande</option>
+								<option value="20px">Enorme</option>
+							</select>
+						</div>
+					</div>
+					<div class="d-flex w-100 justify-content-between">
+						<button id="bolder-rdp-bt" value="0" class="p-2 bt-txt bt-default mx-1"><strong>Negrito</strong></button>
+						<button id="italic-rdp-bt" value="0" class="p-2 bt-txt bt-default mx-1"><i>Itálico</i></button>
+						<button id="underline-rdp-bt" value="0" class="p-2 bt-txt bt-default mx-1"><u>Sublinhado</u></button>
+					</div>
+					<button type="button" class="w-100 bt-in bt-default bt-pronto">Pronto!</button>
+				</div>
+			</div>

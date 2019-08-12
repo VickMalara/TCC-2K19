@@ -1,20 +1,27 @@
-<div class="form-div">
-	<h1>Recuperação de Senha</h1>
-	<p id="msg"></p>
-	<form action = "precupera.php" method = "POST">
-	
-		<p>
-			<label for = "email">Coloque seu e-mail</label>
-			<input type = "email" id = "email" />
-		</p>
+<? session_start();
+if(!isset($_SESSION["usuario"])){
+	header("Location:index.php");
+}
+?>
+<div class="row h-100 m-0">
+	<div class="form-div col-12 col-lg-8 p-3 w-60">
+		<h1 class="w-100 display-1">Recuperação de Senha</h1>
+		<p id="msg"></p>
+		<form action = "precupera.php" class="container" method = "POST" style="overflow-y: visible;">
+		
+			<div class="w-100">
+				<label for = "email" class="w-100">Coloque seu e-mail</label>
+				<input type = "email" id = "email" class="w-100"/>
+			</div>
+					
 				
-			
-		<p class="botoes">
-			<button type="button" id="bt-precupera">Continuar</button>
-			<button type="button" id="bt-limpa-modal">Cancelar</button>
-		</p>
+			<div class="row d-flex bt-form justify-content-center">
+				<button type="button" id="bt-precupera" class="w-100 bt-default">Continuar</button>
+				<button type="button" id="bt-limpa-modal" class="w-100 bt-cancel bt-default">Cancelar</button>
+			</p>
 
-	</form>
+		</form>
+	</div>
 </div>
 
 <script type="text/javascript">
@@ -40,8 +47,11 @@
 			$('#msg').html(msg);
 		});
 	});
+
 	$('#bt-limpa-modal').click(function(){
 		$("#modal-dinamico").css("width",'0%');
-		$("#modal-dinamico").html('');
+		setTimeout(function(){
+			$("#modal-dinamico").html('');
+		},200);
 	});
 </script>

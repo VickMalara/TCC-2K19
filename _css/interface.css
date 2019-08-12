@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 *{
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
-	font-family: 'Merriweather', serif;
+	/*font-family: 'Montserrat';*/
+}
+
+button{
+	outline:none !important;
 }
 
 body{
 	position: absolute;
-	width:100%;
-	height:100%;
 	background-image: url("../_img/background.jpg");
 	background-repeat: repeat;
 	background-size: 15%;
@@ -20,230 +22,259 @@ body::-webkit-scrollbar{
 	width:0;
 }
 
-button{
-	outline: none;
+nav{
+	z-index: 1;
 }
 
-button:hover{
-	cursor: pointer;
-}
-
-#conteudo{
-	display: flex;
-	height:85%;
-	transition: all 0.4s;
-}
-
-#bloco-conteudo{
-	width:100%;
-	display: inline-flex;
-	height: 100%;
-	align-items: center;
-	justify-content: center;
-}
-
-#txt-central{
-	width:50%;
-	height: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding:0px 20px;
-	color:#ffab40ff;
+div#login-container{
+	background:#000000dd;
 	text-align: center;
 	text-transform: uppercase;
-	background: rgba(0,0,0,0.7);
-	
-	border-top:3px solid #ffab40;
-	border-bottom: 3px solid #ffab40;
+	color:white;
+	font-weight: lighter;
+	box-shadow:3px 0px 2px #0009;
 }
 
-#modal-dinamico{
+div#login-container h1{
+	border-top:1px solid white;
+	border-bottom:1px solid white;
+	font-weight: normal;
+	font-size:5rem;
+	background: linear-gradient(to right, #ff8e1f, #6a34c8);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
+#login-container div{
+	height: 60%;
+}
+
+button.bt-default{
+	width:80%;
+	margin:10px auto;
+	padding:5px;
+	background:#f5dd3d;
+	border:none;
+	color: #222;
+	font-weight: lighter;
+	text-transform: uppercase;
+	box-shadow: 5px 5px 0px #f5dd3d78;
+	transition: box-shadow 0.3s, background 0.3s;
+}
+
+button.bt-default:hover{
+	box-shadow: 5px 5px 0px #ffffff78;
+	background-color: white;
+}
+
+button.bt-default:active{
+	box-shadow: none;
+}
+
+button.bt-cancel{
+	color:white !important;
+	background-color: #a00c !important;
+	box-shadow: 5px 5px 0px #a00a !important;
+	transition: box-shadow 0.3s, background 0.3s; 
+}
+
+button.bt-cancel:hover{
+	background-color: white !important;
+	box-shadow: 5px 5px 0px #ffffff78 !important;
+	color:#a00 !important;
+}
+
+#login-container div p{
+	margin:0;
+	font-size:2rem;
+	font-weight: lighter;
+	color:white;
+	padding:0;
+}
+
+div#modal-dinamico{
 	position: absolute;
 	z-index: 1;
 	top:0;
 	width:0%;
 	height:100%;
-	background: #000d;
-	transition: all 0.3s;
+	background: transparent;
+	transition: all 0.2s;
 }
 
 .form-div{
-	background: #45e8ac;
-	width:35%;
-	height: 100%;
-	box-shadow: 2px 0px 20px #45e8ac;
+	background: #b3e5b3;
 	text-align: center;
-	padding:15px;
+	overflow-x: hidden;
+	box-shadow: 3px 0px 3px #0008;
+}
+.form-div form{
+	overflow-y: scroll;
+	height:75%;
 }
 
 .form-div h1{
 	display: box;
-	width:100%;
 	margin:auto;
 	margin-bottom:30px;
-	border-top:3px solid rgba(51,51,51,0.8);
-	border-bottom:3px solid rgba(51,51,51,0.8);
-	color:#333;
-	font-size:3em;
+	border-top:3px solid #545454;
+	border-bottom:3px solid #545454;
+	color:#545454;
 	text-transform: uppercase;
 }
 
-#msg,#msg-dados{
-	display: none;
-	width:100%;
-	height:0;
-	padding:5px;
-	opacity: 0;
-	transition: all 0.2s;
-}
-
-.form-div p{
+.form-div div{
 	width:100%;
 	margin:8px auto;
 	text-align: left;
-	color:#fff;
-	font-size:0.9em;
+	color:#333;
+	font-size:1.2rem;
 }
 
-.form-div p input{
+.form-div div label{
+	color:#545454;
+}
+
+.form-div div input, .form-div div select{
 	display: box;
 	width:100%;
-	height:30px;
-	border:1px solid #fff;
-	background:transparent;
-	color:white;
+	font-size:1.5rem;
+	border:none;
+	box-shadow: 3px 3px 0px #0004;
+	background:rgba(255,255,255,0.8);
+	color:#333;
 	outline: none;
 	padding:5px;
-	box-shadow: inset 0px 0px 4px rgba(255,255,255,0.8);
-	transition:all 0.4s;
+	transition:all 0.3s;
 }
 
-.form-div p input:focus{
-	background: rgba(255,255,255,0.3);
-	color:#999;
+.form-div div input:focus{
+	box-shadow: 0px 0px 5px #0004;
 }
 
-.form-div p.sub-campo{
-	text-transform: unset;
+.form-div .bt-form button{
+	color: #545454;
+	margin:3px 0;
+	background:#fff9;
+	font-size:2rem;
+	box-shadow: 3px 3px 0px #0004;
 }
 
-.form-div p.sub-campo button{
+.form-div .bt-form button:hover{
+	box-shadow: 1px 1px 0px #0004;
+}
+
+.form-div .form-link button{
+	font-size:1.5rem;
+	padding:0;
+	color:#6a34c8;
 	border:none;
-	color:#0b5b3e;
-	background: transparent;
-	font-weight: bold;
+	background:none;
 }
 
-.form-div p.sub-campo button:hover{
-	cursor:pointer;
-}
-
-.form-div p.radio{
-	display:flex;
-	justify-content: center;
-	background:#0e714d;
-}
-
-.form-div p.radio input{
-	display: none;
-}
-
-.form-div p.radio label{
-	display:block;
-	color:#19cc8b;
-	width:100%;
-	padding:5px;
-	text-align:center;
-	background-color:white;
-	transition: all 0.3s;
-}
-
-.form-div p.radio label:hover{
-	cursor: pointer;
-}
-
-#masculino:checked ~ label[for="masculino"], #nao-binario:checked ~ label[for="nao-binario"], #feminino:checked ~ label[for="feminino"]{
-	background-color:transparent;
-	color:white;
-}
-
-.form-div p.botoes{
-	margin-top:3%;
-	display: flex;
-	justify-content: center;
-	height:40px;
-}
-
-.form-div p.botoes button{
-	width:100%;
-	padding:5px;
-	border:none;
-	font-size:1em;
-	color:#19cc8b;
-	text-transform: uppercase;
-	/*box-shadow: inset 0px 0px 4px rgba(0,0,0,0.7);*/
-	background: rgba(255,255,255,1);
-	transition: box-shadow 0.4s;
-}
-
-.form-div p.botoes button[id="bt-limpa-modal"]{
-	margin-left: 5px;
-	color:#990000;
-	width:45%;
-}
-
-.form-div p.botoes button:hover{
-	box-shadow:inset 0px 0px 4px #0b5b3e;
-}
-
-.form-div p.botoes button[id="bt-limpa-modal"]:hover{
-	box-shadow:inset 0px 0px 4px #900;
-}
-
-.form-div p.botoes button:disabled{
-	background: rgb(100,100,100);
-}
-
-#validacao{
-	width:100%;
-	position: absolute;
-	top:15%;
-	background: rgba(200,0,0,0.8);
-	padding:5px;
-	text-align: center;
-	color:black;
-	display:flex;
-	transition: background 0.3s;	
-}
-
-#validacao a{
-	text-decoration: none;
-	color:#fff;
-	font-weight: bold;
-}
-
-#validacao a:hover{
+.form-div .form-link button:hover{
 	text-decoration: underline;
 }
 
-#validacao button{
-	height: 100%;
-	width:auto;
-	background: transparent;
-	border:none;
+.form-div div.radio label{
+	display:block;
+	width:100%;
+	padding:5px;
+	font-size:2rem;
+	margin:0px 3px;
 	text-align:center;
-	font-weight: bold;
-	color:white;
-	transition: text-shadow 0.3s;
+	background-color:rgba(255,255,255,0.3);
+	box-shadow: 3px 3px 0px #0004;
+	transition: all 0.3s;
 }
 
-#validacao p{
-	display: block;
-	width: 100%;
+.form-div div.radio label:hover{
+	box-shadow: 3px 3px 0px #0004;
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+#feminino:checked ~ label[for="feminino"]{
+	background: #fffd;
+}
+
+#masculino:checked ~ label[for="masculino"]{
+	background: #fffd;
+}
+
+#nao-binario:checked ~ label[for="nao-binario"]{
+	background: #fffd;
+}
+
+#msg,#msg-dados{
+	width:0;
+	font-size:1.5rem;
+	min-height: 40px;
 	text-align: center;
+	transition: width .3s,background-color .5s;
 }
 
-#validacao button:hover{
-	text-shadow:0px 0px 3px rgba(255,255,255,0.5);
+.navbar{
+	background-color: #000b;
+	transition: height 0.5s, padding 0.5s;
+}
+
+.navbar-logo{
+	display: block;
+	line-height: 100%;
+	text-align:center;
+	font-weight: lighter;
+	font-size:2rem;
+	color:#ffff;
+	opacity: 1;
+}
+
+.nav-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width:100%;
+}
+
+.nav-item button{
+ 	border:none;
+ 	width:100%;
+ 	padding:5px;
+ 	font-size:1.5rem;
+ 	font-weight: lighter;
+}
+
+.nav-item button.atual{
+	background:#7d7;
+	box-shadow: 5px 5px 0px #7d79;
+}
+.nav-item button.atual:hover{
+	background-color: white;
+	box-shadow:5px 5px 0px #fff9;
+}
+
+#validacao{
+	display: flex;
+	justify-content:flex-start;
+	margin:5px;
+	background: #bb2222ff;
+	text-align: center;
+	width: 50%;
+	color:black;
+	box-shadow: 2px 2px 0px #561010cc;
+	transition: background 0.3s;	
+}
+#validacao p{
+	width:auto;
+	text-align: left;
+}
+
+#validacao p button{
+	background-color: transparent;
+	border: none;
+	color:white;
+}
+
+#validacao p button:hover{
+	text-decoration: underline;
 }

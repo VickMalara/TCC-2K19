@@ -84,40 +84,42 @@
 		})
 	});
 </script>
-<div class="form-div">
-	<form>
-		<p id="msg-dados"></p>
-		<p>
-			<label for="apelido">Apelido</label>
-			<input type="text" name="apelido" id="apelido" <?php echo 'value="'.$apelido.'"'?> maxlength="10">
-		</p>
-		<p>
-			<label for="nome">Nome</label>
-			<input type="text" name="nome" id="nome" <?php echo 'value="'.$nome.'"'?> >
-		</p>
-		<p class="botoes">
-			<button type="button" id="bt-salv-mud">Salvar Mudanças</button>
-		</p>
-	</form>
-	<form>
-		<p id="msg-senha"></p>
-		<p>
-			<label for="senha">Senha Antiga</label>
-			<input type="password" name="senha" id="senha">
-		</p>
-		<p>
-			<label for="nvsenha">Nova Senha</label>
-			<input type="password" name="nvsenha" id="nvsenha">
-		</p>
-		<p>
-			<label for="nvsenha">Corfime a Senha</label>
-			<input type="password" name="nvsenha-ver" id="versenha">
-		</p>
-		<p class="botoes">
-			<button type="button" id="bt-salv-senha">Salvar Senha</button>
-			<button type="button" id="bt-limpa-modal">Cancelar</button>
-		</p>
-	</form>
+<div class="row h-100 m-0">
+	<div class="form-div col-12 col-lg-8 p-3 w-50 h-100">
+		<h1 class="w-100 display-1">Edite o seu perfil</h1>
+		<form class="container">
+			<div id="msg-dados"></div>
+			<div class="w-100">
+				<label for="apelido" class="w-100">Apelido:</label>
+				<input type="text" name="apelido" id="apelido"   class="w-100"<?php echo 'value="'.$apelido.'"'?> maxlength="10">
+			</div>
+			<div class="w-100">
+				<label for="nome" class="w-100">Nome:</label>
+				<input type="text" name="nome" id="nome"  class="w-100"<?php echo 'value="'.$nome.'"'?> >
+			</div>
+			<div class="row d-flex bt-form justify-content-center">
+				<button type="button" id="bt-salv-mud"  class="w-100 bt-default">Salvar Mudanças</button>
+			</div>
+
+			<div id="msg-senha"></div>
+			<div class="w-100">
+				<label for="senha" class="w-100">Senha Atual:</label>
+				<input type="password" name="senha" id="senha" class="w-100">
+			</div>
+			<div class="w-100">
+				<label for="nvsenha" class="w-100">Nova Senha:</label>
+				<input type="password" name="nvsenha" id="nvsenha" class="w-100">
+			</div>
+			<div class="w-100">
+				<label for="nvsenha" class="w-100">Confirme a Senha:</label>
+				<input type="password" name="nvsenha-ver" id="versenha" class="w-100">
+			</div>
+			<div class="row d-flex bt-form justify-content-center">
+				<button type="button" id="bt-salv-senha" class="w-100 bt-default">Salvar Senha</button>
+				<button type="button" id="bt-limpa-modal" class="w-100 bt-default bt-cancel">Cancelar</button>
+			</div>
+		</form>
+	</div>
 </div>
 <script type="text/javascript">
 	$("#versenha").keyup(function(){
@@ -134,7 +136,9 @@
 
 	$('#bt-limpa-modal').click(function(){
 		$("#modal-dinamico").css("width",'0%');
-		$("#modal-dinamico").html('');
+		setTimeout(function(){
+			$("#modal-dinamico").html('');
+		},200);
 	});
 </script>
 

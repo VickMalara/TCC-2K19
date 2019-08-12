@@ -1,0 +1,57 @@
+
+<style>
+div.div-proj{
+	display:flex;
+	flex-direction: column;
+	padding:5px;
+	width:100%;
+	height:100%;
+}
+
+div.div-proj h1{
+	text-align: center;
+	font-weight: 700;
+	font-size: 48px;
+	width:100%;
+}
+
+div.div-proj .text{
+	display: block;
+	font-weight:300;
+	font-size: 32px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}header{
+	display: block;
+	width:100%;
+	text-align:center;
+	padding:5px;
+}
+
+header h1{
+	font-size:48px;
+	font-weight:300;
+}footer{
+	width:100%;
+	text-align:center;
+	font-size:32px;
+	padding:5px;
+	font-weight: 300;
+}</style>
+<div id="body-proj" class="d-flex flex-column h-100">
+<div id="proj-content" class="d-flex justify-content-center h-100 w-100 p-2" style="order:2;"><div id="0" onclick="confAtributos(0);carregarTxt(0);" class="div-proj" style="background-color: rgb(77, 0, 153); padding: 10px;">
+	<h1 style="color: rgb(255, 217, 179);">TÍTULO</h1>
+	<div class="text" style="color: rgb(255, 217, 179); text-align: center;">seu texto aqui</div>
+</div><div id="1" onclick="confAtributos(1);carregarTxt(1);" class="div-proj" style="background-color: rgb(77, 0, 153); padding: 10px;">
+	<h1 style="color: rgb(255, 217, 179);">TÍTULO</h1>
+	<div class="text" style="color: rgb(255, 217, 179); text-align: center;">seu texto aqui</div>
+</div></div><header style="order: 1; color: rgb(0, 89, 179); background-color: rgb(204, 230, 255); padding: 15px;" onclick="confAtributos('header');">
+	<h1 id="titulo" style="font-size: 42px;">CABEÇALHO</h1>
+</header><footer style="order: 3; color: rgb(0, 89, 179); background-color: rgb(204, 230, 255); padding: 15px;" onclick="confAtributos('footer');">
+	<span id="nomeAutor" style="font-size: 42px;">Nome do autor</span>
+	<span id="copy" style="font-size: 42px;"> ©</span>
+	<span id="ano" style="font-size: 42px;">2019</span>
+</footer></div>
+	

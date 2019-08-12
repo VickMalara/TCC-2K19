@@ -1,10 +1,16 @@
-#projeto div h1{
-	text-align: center;
-	font-weight: bold;
-	font-size: 2em;
-	text-transform: uppercase;
+div.div-proj{
+	padding:5px;
+	width:40%;
+	height:100%;
 }
 
-#projeto div p{
-	font-size: 1.5em;
+div.div-proj h1{
+	text-align: center;
+	font-weight: 700;
+	font-size: 48px;
+}
+
+div.div-proj p{
+	font-weight:300;
+	font-size: 32px;
 }

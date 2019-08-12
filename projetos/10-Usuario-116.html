@@ -1,0 +1,57 @@
+
+<style>
+div.div-proj{
+	display:flex;
+	flex-direction: column;
+	padding:5px;
+	width:100%;
+	height:100%;
+}
+
+div.div-proj h1{
+	text-align: center;
+	font-weight: 700;
+	font-size: 48px;
+	width:100%;
+}
+
+div.div-proj .text{
+	display: block;
+	font-weight:300;
+	font-size: 32px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}#arq-proj header{
+	display: block;
+	width:100%;
+	text-align:center;
+	padding:5px;
+}
+
+#arq-proj header h1{
+	font-size:48px;
+	font-weight:300;
+}footer{
+	width:100%;
+	text-align:center;
+	font-size:32px;
+	padding:5px;
+	font-weight: 300;
+}</style>
+<div id="body-proj" class="d-flex flex-column h-100">
+<div id="proj-content" class="d-flex justify-content-center h-100 w-100 p-2" style="order:2;"><div id="0" onclick="confAtributos(0);carregarTxt(0);" class="div-proj" style="background-color: rgb(51, 51, 51);">
+	<h1 style="color: rgb(217, 140, 179);">FUNDO CINZA</h1>
+	<div class="text" style="color: rgb(217, 140, 179); text-align: center;">e o texto aqui é rosa claro, essa disgraça.</div>
+</div><div id="1" onclick="confAtributos(1);carregarTxt(1);" class="div-proj" style="background-color: rgb(198, 83, 140);">
+	<h1 style="color: rgb(33, 37, 41);">FUNDO ROSA</h1>
+	<div class="text" style="color: rgb(33, 37, 41); text-align: center;">e o texto aqui é cinza, essa disgraça.</div>
+</div></div><header style="order: 1; color: rgb(198, 83, 140); background-color: rgb(171, 171, 171); text-align: center;" onclick="confAtributos('header');">
+	<h1 id="titulo" style="font-size: 64px; font-style: normal; font-weight: 300;">PÁGINA ALEATÓRIA</h1>
+</header><footer style="order: 3; color: rgb(51, 51, 51); background-color: rgb(198, 83, 140); padding: 20px;" onclick="confAtributos('footer');">
+	<span id="nomeAutor" style="font-weight: 300; font-style: italic;">UM CARA (OU MINA) AÍ</span>
+	<span id="copy" style="font-weight: 300; font-style: italic;"> ©</span>
+	<span id="ano" style="font-weight: 300; font-style: italic;">1830</span>
+</footer></div>
+	

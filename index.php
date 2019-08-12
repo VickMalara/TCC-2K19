@@ -1,76 +1,56 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 	<head>
-		<title>PINEAPPLE</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="_css/interface.css">
-		<link rel="stylesheet" id="nav" type="text/css" href="_css/nav-offline.css">
-		<link rel="stylesheet" id="nav" type="text/css" href="_css/projeto.css">
-		<link rel="stylesheet" id="nav" type="text/css" href="_css/card.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<script type="text/javascript" src="_js/jquery.min.js"></script>
+		<script type="text/javascript" src="_js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="_js/colorPick.min.js"></script>
+		<script type="text/javascript" src="_js/dytemp.js"></script>
+		<link rel="stylesheet" type="text/css" href="_css/interface.css"/>
+		<link rel="stylesheet" type="text/css" href="_css/bootstrap.min.css">
+		<link rel="stylesheet" href="_css/colorPick.min.css">
+		<link rel="stylesheet" type="text/css" href="_css/projeto.css"/>
+		<title>Pineapple Kids Devel</title>
 	</head>
-	<body>
-		<?php include "nav.php"; ?>
-		<div id="conteudo">
-			<div id="bloco-conteudo">
-				<?php
-					if(isset($_SESSION["validacao"]) && $_SESSION["validacao"] == 0){
-						echo'<div id="validacao">
-							<button class="bt-close">&times;</button>
-							<p>Seu e-mail ainda precisa ser validado. <button id="bt-send-email">Clique aqui</button> e será enviado ao seu e-mail um link de verificação. Acesse esse link e seu e-mail será validado.</p>
-						</div>';
-					}
-				?>
-				<div id="txt-central">
-					<h1>,Aqui você aprende a criar sites brincando! Para começar a usar, crie ou acesse sua conta.</h1>
-				</div>
-				
-			</div>
-			<div id="modal-dinamico">
+	<body class="w-100 h-100">
+		<div class="page h-100">
+			<div class="row m-0 h-100">
+			<?php
+				if(!isset($_SESSION["usuario"])){
+					include "pagina-login.php";
+				}else{
+					include "pagina-inicial.php";
+				}
+			 ?>
 			</div>
 		</div>
-		<script type="text/javascript">
-			var interval;
+		<div id="modal-dinamico" class="h-100">
+		</div>
+	</body>
 
-			$(function(){
-				$('#bt-login').on("click",function(){
-					$("#modal-dinamico").css("width",'100%');
-					$.ajax({
-						url : 'login.php',
-						type : 'get'
-					}).done(function(msg){
-						$('#modal-dinamico').html(msg);
-					});
-				});
-
-				$('#bt-cadastro').on("click",function(){
-					$("#modal-dinamico").css("width",'100%');
-					$.ajax({
-						url : 'cadastro.php',
-						type : 'get'
-					}).done(function(msg){
-						$('#modal-dinamico').html(msg);
-					})
-				});
-
-				$('#bt-send-email').click(function(){
-					$.ajax({
-						url : "sendemail.php",
-						type : "get",
-						beforeSend : function(){
-							$("#validacao").css('background','rgba(237, 198, 83,0.5)');
-							$("#validacao p").html('Enviando E-mail...');
-						}
-					}).done(function(msg){
-						$("#validacao").css('background','rgba(22, 182, 123,0.5)');
-						$("#validacao p").html('E-mail enviado com sucesso!');
-						setTimeout(function(){
-							$("#validacao").fadeOut();
-						},500);
-					});
+	<script type="text/javascript">
+		$(function(){
+			$('#bt-login').on("click",function(){
+				$("#modal-dinamico").css('width','100%');
+				$.ajax({
+					url : 'login.php',
+					type : 'get'
+				}).done(function(msg){
+					$('#modal-dinamico').html(msg);
 				});
 			});
-		</script>
-	</body>
+
+			$('#bt-cadastro').on("click",function(){
+				$("#modal-dinamico").css('width','100%');
+				$.ajax({
+					url : 'cadastro.php',
+					type : 'get'
+				}).done(function(msg){
+					$('#modal-dinamico').html(msg);
+				});
+			});
+		});
+	</script>
 </html>
