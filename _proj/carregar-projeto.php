@@ -1,4 +1,15 @@
-<div class="d-flex flex-wrap justify-content-center w-100 h-100 p-3" style="align-items: flex-start;overflow-y: scroll;">
+<div class="w-100 p-5 bg-dark" style="height: 20%">
+  <div class="p-2 bg-light rounded rounded-pill shadow-sm mb-4">
+    <div class="input-group">
+      <input type="search" placeholder="Digite o nome do projeto que quer buscar..." class="form-control border-0" style="background:transparent;box-shadow:none;" >
+      <div class="input-group-append">
+        <button id="button-addon1" type="submit" class="btn btn-link text-success"><i class="fa fa-search">Buscar</i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex flex-wrap justify-content-center w-100 p-3 bg-dark" style="height:80%;align-items: flex-start;overflow-y: scroll;">
 <?php
 	session_start();
 	include "../conexao.php";
@@ -8,6 +19,7 @@
 
 	while($arquivo = mysqli_fetch_assoc($result)){
 		echo "<div class=\"card m-1 p-0\" style=\"min-height:500px;width:24%\">";
+			echo"<button class=\"delete-bt\" class=\"p-1 text-center\">EXCLUIR</button>";
 			echo "<img class=\"card-img-top w-100\" src=\"_img/card-proj.png\" alt=\"Card image cap\" style=\"background-color:#b3e5b3\">";
 			echo "<div class=\"card-body\">";
 				echo "<h5 class=\"card-title\">".$arquivo["nome"]."</h5>";
@@ -57,5 +69,17 @@
 				$("#amb-proj").fadeIn();
 			},500);
 		});
+	});
+	$('.delete-bt').click(function(){
+		var proj = $(this).siblings('.card-body').children('.bt-load').attr('id');
+		$.ajax({
+			url:'_proj/delete-proj.php?proj=' + proj,
+			type:"get"})
+		.done(function(){
+				$("#" + proj).parent().parent().fadeOut();
+				setTimeout(function(){
+					$("#" + proj).parent().parent().remove();
+				},500);
+			});
 	});
 </script>

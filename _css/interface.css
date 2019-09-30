@@ -278,3 +278,26 @@ div#modal-dinamico{
 #validacao p button:hover{
 	text-decoration: underline;
 }
+
+input[type="search"]{
+	transition: all 0.3s;
+}
+
+input[type="search"]:focus{
+	box-shadow:inset 500px 0px #f5dd3d; 
+}
+
+button.delete-bt{
+	border:none;
+	padding:5px;
+	border-radius: 5px 5px 0px 0px;
+	background-color: #a00c;
+	color:white;
+	font-size:1.2rem;
+	transition: color 0.2s, background-color 0.2s;
+}
+
+button.delete-bt:active{
+	background-color:white;
+	color:#a00c;
+}

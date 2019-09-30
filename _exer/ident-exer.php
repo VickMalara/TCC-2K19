@@ -8,6 +8,6 @@
 	if($result){
 		$_SESSION["exerc"] = $result["ident"];
 		$_SESSION["exerc_desc"] = $result["descricao"];
-		echo'<button class="bt-morph bt-pink" onclick="openExerc()">Z</button>';
+		echo'<button class="bt-morph bt-pink" onclick="openExerc();">Z</button>';
 	}
 ?>

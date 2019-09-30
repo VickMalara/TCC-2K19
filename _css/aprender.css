@@ -1,0 +1,48 @@
+#bloco-aprender .apr-bt{
+	box-shadow: 3px 3px 7px #0008;
+	background:#efefefee;
+	transition: all 0.3s;
+}
+
+#bloco-aprender .apr-bt:hover{
+	cursor: pointer;
+}
+
+#bloco-aprender #aprender-site h1{
+	font-size:8em;
+	font-weight: lighter;
+}
+
+#bloco-aprender #aprender-site{
+	color:#cc0000;
+}
+
+#bloco-aprender #aprender-site:hover{
+	background:#cc0000ee;
+	color:white;
+}
+
+#bloco-aprender #aprender-html h1{
+	font-weight: lighter;
+}
+
+#bloco-aprender #aprender-html{
+	color:#f5dd3d;
+}
+
+#bloco-aprender #aprender-html:hover{
+	background:#f5dd3dee;
+	color:white;
+}
+#bloco-aprender #aprender-css h1{
+	font-size:2em;
+	font-weight: lighter;
+}
+#bloco-aprender #aprender-css{
+	color:#1a8cff;
+}
+
+#bloco-aprender #aprender-css:hover{
+	background:#1a8cffee;
+	color:white;
+}

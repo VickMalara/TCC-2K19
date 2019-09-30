@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="_css/bootstrap.min.css">
 		<link rel="stylesheet" href="_css/colorPick.min.css">
 		<link rel="stylesheet" type="text/css" href="_css/projeto.css"/>
+		<link rel="stylesheet" type="text/css" href="_css/aprender.css"/>
 		<title>Pineapple Kids Devel</title>
 	</head>
 	<body class="w-100 h-100">

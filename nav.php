@@ -7,9 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarNav">
   	<ul class="navbar-nav w-100 ml-0 ml-lg-3">
 	  	<li class="nav-item mx-1"><button id="bt-inicio" class="nav-bt bt-default atual">Início</button></li>
-	  	<li class="nav-item mx-1"><button class="nav-bt bt-default">Aprender</button></li>
+	  	<li class="nav-item mx-1"><button id="bt-aprender" class="nav-bt bt-default">Aprender</button></li>
 		<li class="nav-item mx-1"><button id="bt-criar" class="nav-bt bt-default">Criar</button></li>
-		<li class="nav-item mx-1"><button class="nav-bt bt-default">Galeria</button></li>
+		<li class="nav-item mx-1"><button id="bt-galeria" class="nav-bt bt-default">Galeria</button></li>
 		<li class="nav-item mx-1 dropdown "><button id="bt-perfil" class=" nav-link bt-default dropdown-toggle" style="color:#333;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION["apelido"] ?></button>
 			<div  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				<button id="bt-editar-perfil" class="dropdown-item">Editar Perfil</button>
@@ -60,6 +60,36 @@
 			});
 		}, 500);
 		desativarAutoSave();
+	});
+
+	$("#bt-aprender").click(function(){
+		$("#bloco-conteudo").fadeOut();
+			setTimeout(function(){
+				$.ajax({
+					url : "_learn/aprender-inicial.php",
+					type : "get"
+				}).done(function(msg){
+					$("#bloco-conteudo").css("height",'85%');
+					$("nav").css('height','15%');
+					$("#bloco-conteudo").html(msg);
+					$("#bloco-conteudo").fadeIn();
+				});
+		}, 500);
+	});
+
+	$("#bt-galeria").click(function(){
+		$("#bloco-conteudo").fadeOut();
+			setTimeout(function(){
+				$.ajax({
+					url : "galeria-proj.php",
+					type : "get"
+				}).done(function(msg){
+					$("#bloco-conteudo").css("height",'90%');
+					$("nav").css('height','10%');
+					$("#bloco-conteudo").html(msg);
+					$("#bloco-conteudo").fadeIn();
+				});
+		}, 500);
 	});
 
 	$('#bt-perfil').click(function(){
